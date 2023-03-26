@@ -14,9 +14,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          fetch-depth: 0
 
       - name: Run main
         run: echo Hello, world!
+
+      - name: Git Tag
+        run : |
+          git tag satging/$(git rev-list --count HEAD)
+          git push origin satging/$(git rev-list --count HEAD)
