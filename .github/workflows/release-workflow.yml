@@ -4,8 +4,7 @@ name: CI-RELEASE
 
 on:
   push:
-    - tags:
-      'staging/*'
+    tags: ['staging/*']
   workflow_dispatch:
 
 jobs:
