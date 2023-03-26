@@ -16,6 +16,6 @@ jobs:
           fetch-depth: 0
 
       - name: Run realse
-        run: ｜
+        run: |
           echo Hello, world!
           echo ${{github.ref}}
