@@ -9,13 +9,13 @@ on:
     inputs:
       environment:
         description: 'Please confirm the deployment environment again'
-        type: environment
+        type: string
         required: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/tags/staging/')
+    if: startsWith(github.ref, 'refs/tags/staging/') && ${{ inputs.environment }}=='staging'
     steps:
       - uses: actions/checkout@v3
         with:
