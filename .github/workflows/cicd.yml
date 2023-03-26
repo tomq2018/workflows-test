@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/heads/mater')
+    if: startsWith(github.ref, 'refs/heads/master')
     steps:
       - uses: actions/checkout@v3
         with:
