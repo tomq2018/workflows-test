@@ -22,5 +22,5 @@ jobs:
 
       - name: Git Tag
         run : |
-          git tag satging/$(git rev-list --count HEAD)
-          git push origin satging/$(git rev-list --count HEAD)
+          git tag staging/$(git rev-list --count HEAD)
+          git push origin staging/$(git rev-list --count HEAD)
