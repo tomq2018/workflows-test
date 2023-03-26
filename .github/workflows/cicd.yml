@@ -6,17 +6,11 @@ on:
   push:
     branches: [ "master" ]
   workflow_dispatch:
-    inputs:
-      branch:
-        description: 'Branch name'
-        required: true
-        default: 'main'
-
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/heads/')
+    if: startsWith(github.ref, 'refs/heads/mater')
     steps:
       - uses: actions/checkout@v3
         with:
@@ -28,9 +22,5 @@ jobs:
 
       - name: Git Tag
         run : |
-          echo ${{github.ref}}
-          # echo $(startsWith('${{github.ref}}', 'refs/tags/staging/'))
-          # echo $(startsWith('refs/tags/staging/20', 'refs/tags/staging/'))
-          echo $(startsWith('Hello world', 'He'))
           git tag satging/$(git rev-list --count HEAD)
           git push origin satging/$(git rev-list --count HEAD)
