@@ -3,13 +3,14 @@
 name: CI-main
 
 on:
-  # push:
-  #   branches: [ "master" ]
+  push:
+    branches: [ "master" ]
   workflow_dispatch:
-    environment:
-      description: 'Please confirm the deployment environment again'
-      type: string
-      required: true
+    inputs:
+      environment:
+        description: 'Please confirm the deployment environment again'
+        type: string
+        required: true
 
 jobs:
   build:
