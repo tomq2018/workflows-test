@@ -10,6 +10,7 @@ on:
       environment:
         description: 'Please confirm the deployment environment again'
         type: string
+        default: 'staging'
         required: true
 
 jobs:

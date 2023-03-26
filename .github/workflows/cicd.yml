@@ -3,19 +3,13 @@
 name: CI-main
 
 on:
-  # push:
-  #   branches: [ "master" ]
+  push:
+    branches: [ "master" ]
   workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Please confirm the deployment environment again'
-        type: string
-        required: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: inputs.environment =='staging'
     steps:
       - uses: actions/checkout@v3
         with:
