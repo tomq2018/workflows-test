@@ -6,11 +6,6 @@ on:
   push:
     branches: [ "master" ]
   workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Please confirm the deployment environment again'
-        type: string
-        required: true
 
 jobs:
   build:

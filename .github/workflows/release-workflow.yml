@@ -6,10 +6,11 @@ on:
   push:
     tags: ['staging/*']
   workflow_dispatch:
-    environment:
-      description: 'Please confirm the deployment environment again'
-      type: environment
-      required: true
+    inputs:
+      environment:
+        description: 'Please confirm the deployment environment again'
+        type: environment
+        required: true
 
 jobs:
   build:
