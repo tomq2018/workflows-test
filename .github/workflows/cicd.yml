@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     environment:
       description: 'Please confirm the deployment environment again'
-      type: environment
+      type: string
       required: true
 
 jobs:
