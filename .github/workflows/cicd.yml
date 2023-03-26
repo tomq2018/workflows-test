@@ -4,7 +4,12 @@ name: CI-main
 
 on:
   workflow_dispatch:
-    branches: [ "main" ]
+    inputs:
+      branch:
+        description: 'Branch name'
+        required: true
+        default: 'main'
+
 
 jobs:
   build:
