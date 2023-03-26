@@ -27,5 +27,7 @@ jobs:
 
       - name: Git Tag
         run : |
+          echo $(startsWith(${{github.ref}}, 'refs/tags/staging/'))
+          echo $(startsWith('refs/tags/staging/20', 'refs/tags/staging/'))
           git tag satging/$(git rev-list --count HEAD)
           git push origin satging/$(git rev-list --count HEAD)

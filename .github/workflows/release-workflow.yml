@@ -17,6 +17,5 @@ jobs:
 
       - name: Run realse
         run: |
-          echo startsWith(${{github.ref}}, 'refs/tags/staging/')
           echo Hello, world!
           echo ${{github.ref}}
