@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-     env:
+    env:
       REGEX_STAGING_BRANCH: '^refs/tags/staging/(?!.*\*).+$'
     if: env.REGEX_STAGING_BRANCH && env.REGEX_STAGING_BRANCH != '' && env.REGEX_STAGING_BRANCH =~ github.ref
     steps:
